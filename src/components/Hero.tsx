@@ -3,10 +3,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { ArrowDownCircle } from 'lucide-react';
 import { Canvas, useFrame } from '@react-three/fiber';
 import Spline from '@splinetool/react-spline';
-
-
-
-
+import { useNavigate } from "react-router-dom";
 
 function BackgroundScene() {
   return (
@@ -57,12 +54,12 @@ const StatCard = ({ value, label, delay = 0 }: { value: number; label: string; d
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.8 }}
-      className="relative bg-gradient-to-r from-violet-900/10 to-fuchsia-900/10 p-6 rounded-xl border border-purple-500/20 backdrop-blur-md"
+      className="relative bg-gradient-to-r from-violet-900/10 to-fuchsia-900/10 p-4 md:p-6 rounded-xl border border-purple-500/20 backdrop-blur-md"
     >
-      <h3 className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-fuchsia-500">
+      <h3 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-fuchsia-500">
         {count}+
       </h3>
-      <p className="text-gray-400 font-medium mt-2">{label}</p>
+      <p className="text-sm md:text-base text-gray-400 font-medium mt-2">{label}</p>
     </motion.div>
   );
 };
@@ -71,6 +68,17 @@ export const Hero = () => {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 0.5], [0, -50]);
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
+  const navigate = useNavigate();
+
+  const scrollToTechStack = () => {
+    const techStackElement = document.getElementById('tech-stack');
+    if (techStackElement) {
+      techStackElement.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+  const handlePortfolioClick = () => {
+    navigate("/portfolio");
+  };
 
   return (
     <motion.div 
@@ -97,7 +105,7 @@ export const Hero = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1 }}
-              className="text-5xl md:text-7xl font-extrabold mb-6"
+              className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-4 md:mb-6"
             >
               <span className="block">Hey, I'm</span>
               <span className="block bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-purple-400 to-fuchsia-500">
@@ -111,13 +119,13 @@ export const Hero = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5, duration: 0.8 }}
             >
-              <p className="text-xl md:text-2xl text-gray-300 mb-4 font-light">
+              <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-4 font-light">
                 Transforming businesses through intelligent automation and AI integration
               </p>
-              <div className="flex flex-wrap items-center gap-4 text-violet-300 mb-10">
-                <span className="text-lg font-medium">★ 89% Job Success</span>
+              <div className="flex flex-wrap items-center gap-3 md:gap-4 text-violet-300 mb-8 md:mb-10">
+                <span className="text-base md:text-lg font-medium">★ 95% Job Success</span>
                 <span className="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
-                <span className="text-lg font-medium">$10K+ Earnings</span>
+                <span className="text-base md:text-lg font-medium">$40K+ Earnings</span>
               </div>
             </motion.div>
             
@@ -126,47 +134,47 @@ export const Hero = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.8, duration: 0.8 }}
-              className="flex gap-4 mb-12"
+              className="flex gap-3 md:gap-4 mb-8 md:mb-12"
             >
-              <motion.button
+              <motion.a
+                href="https://www.upwork.com/freelancers/~01f97a5fe71022a58c?mp_source=share"
+                target="_blank"
+                rel="noopener noreferrer"
                 whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(139, 92, 246, 0.5)" }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 rounded-lg bg-gradient-to-r from-violet-600 to-fuchsia-600 font-medium text-white"
+                className="px-4 md:px-6 py-2.5 md:py-3 rounded-lg bg-gradient-to-r from-violet-600 to-fuchsia-600 font-medium text-white text-sm md:text-base"
               >
                 Hire Me
-              </motion.button>
+              </motion.a>
               <motion.button
+                onClick={handlePortfolioClick}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 rounded-lg border border-violet-500/50 font-medium text-violet-300 hover:bg-violet-800/20 transition-colors duration-300"
+                className="px-4 md:px-6 py-2.5 md:py-3 rounded-lg border border-violet-500/50 font-medium text-violet-300 hover:bg-violet-800/20 transition-colors duration-300 text-sm md:text-base"
               >
                 View Portfolio
               </motion.button>
             </motion.div>
             
             {/* Stats */}
-            <div className="grid grid-cols-3 gap-4 mb-10">
+            <div className="grid grid-cols-3 gap-2 md:gap-4 mb-8 md:mb-10">
               <StatCard value={46} label="Projects" delay={1.0} />
               <StatCard value={128} label="Hours" delay={1.2} />
               <StatCard value={3} label="Years Exp" delay={1.4} />
             </div>
           </div>
           
-          {/* Right side 3D model space */}
-          <div className="w-full md:w-6/12 h-full relative">
+          {/* Right side 3D model space - Hidden on mobile */}
+          <div className="hidden md:block w-full md:w-7/12 h-full relative right-0">
             <motion.div
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.5, duration: 1.5 }}
-              className="w-full h-full"
+              className="w-full h-full absolute right-0"
             >
-              <div className="absolute inset-0">
+              <div className="absolute inset-0 scale-125 translate-x-16">
                 <Spline scene="https://prod.spline.design/uzDlziyJujOkuAYo/scene.splinecode" />
               </div>
-              
-              {/* Decorative elements */}
-              {/* <div className="absolute top-1/4 right-1/4 w-40 h-40 bg-purple-600/20 rounded-full filter blur-3xl z-0" />
-              <div className="absolute bottom-1/4 left-1/3 w-32 h-32 bg-fuchsia-600/20 rounded-full filter blur-3xl z-0" /> */}
             </motion.div>
           </div>
         </div>
@@ -176,10 +184,10 @@ export const Hero = () => {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ repeat: Infinity, duration: 2 }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400 z-20"
+        className="absolute bottom-32 md:bottom-8 left-1/2 transform -translate-x-1/2 text-gray-400 z-20"
       >
-        <p className="text-sm mb-2 text-center">Scroll to explore</p>
-        <ArrowDownCircle className="w-6 h-6 mx-auto" />
+        <p className="text-xs md:text-sm mb-2 text-center">Scroll to explore</p>
+        <ArrowDownCircle className="w-5 h-5 md:w-6 md:h-6 mx-auto" />
       </motion.div>
     </motion.div>
   );

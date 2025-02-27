@@ -13,6 +13,7 @@
     "@react-three/drei": "^9.99.0",
     "@react-three/fiber": "^8.15.12",
     "@splinetool/react-spline": "^4.0.0",
+    "clsx": "^2.1.1",
     "framer-motion": "^10.18.0",
     "framer-motion-3d": "^10.16.16",
     "inter-ui": "^4.1.0",
@@ -20,6 +21,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^7.2.0",
+    "tailwind-merge": "^3.0.2",
     "three": "^0.159.0"
   },
   "devDependencies": {

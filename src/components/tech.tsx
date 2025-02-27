@@ -32,17 +32,17 @@ const Eyes: React.FC<EyesProps> = ({ mouseX, mouseY }) => {
   }, [mouseX, mouseY]);
 
   return (
-    <div className="flex gap-4 justify-center items-center">
-      <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center">
+    <div className="hidden md:flex gap-2 md:gap-4 justify-center items-center">
+      <div className="w-12 h-12 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center">
         <div 
           ref={leftEyeRef}
-          className="w-8 h-8 rounded-full bg-purple-600"
+          className="w-5 h-5 md:w-8 md:h-8 rounded-full bg-purple-600"
         />
       </div>
-      <div className="w-20 h-20 bg-white rounded-full flex items-center justify-center">
+      <div className="w-12 h-12 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center">
         <div 
           ref={rightEyeRef}
-          className="w-8 h-8 rounded-full bg-purple-600"
+          className="w-5 h-5 md:w-8 md:h-8 rounded-full bg-purple-600"
         />
       </div>
     </div>
@@ -50,15 +50,15 @@ const Eyes: React.FC<EyesProps> = ({ mouseX, mouseY }) => {
 };
 
 const TechCard: React.FC<{ title: string; description: string; position: string }> = ({ title, position }) => {
-  const positionStyles = {
-    'left-top': 'left-0 top-[10%]',
-    'left-middle': 'left-0 top-[35%]',
-    'left-bottom': 'left-0 top-[60%]',
-    'right-top': 'right-10 top-[10%]',
-    'right-middle': 'right-10 top-[35%]',
-    'right-bottom': 'right-10 top-[60%]',
-    'center-top': 'left-1/3 -translate-x-1/2 top-[10%]',
-    'center-bottom': 'left-1/3 -translate-x-1/2 top-[60%]'
+  const desktopPositionStyles = {
+    'left-top': 'md:left-0 md:top-[10%]',
+    'left-middle': 'md:left-0 md:top-[35%]',
+    'left-bottom': 'md:left-0 md:top-[60%]',
+    'right-top': 'md:right-10 md:top-[10%]',
+    'right-middle': 'md:right-10 md:top-[35%]',
+    'right-bottom': 'md:right-10 md:top-[60%]',
+    'center-top': 'md:left-1/3 md:-translate-x-1/2 md:top-[10%]',
+    'center-bottom': 'md:left-1/3 md:-translate-x-1/2 md:top-[60%]'
   }[position];
 
   return (
@@ -66,11 +66,11 @@ const TechCard: React.FC<{ title: string; description: string; position: string 
       initial={{ opacity: 0, x: position.includes('left') ? -50 : position.includes('right') ? 50 : 0 }}
       whileInView={{ opacity: 1, x: 0 }}
       transition={{ duration: 0.5 }}
-      className={`absolute ${positionStyles} w-80 cursor-pointer`}
+      className={`relative md:absolute ${desktopPositionStyles} w-full md:w-80 cursor-pointer mb-4 md:mb-0`}
     >
       <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
-      <div className="relative bg-black/50 backdrop-blur-xl p-6 rounded-2xl border border-purple-500/20">
-        <h3 className="text-2xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
+      <div className="relative bg-black/50 backdrop-blur-xl p-4 md:p-6 rounded-2xl border border-purple-500/20 hover:bg-purple-900/50 transition-all duration-300">
+        <h3 className="text-xl md:text-2xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 hover:text-white transition-colors duration-300">
           {title}
         </h3>
       </div>
@@ -134,7 +134,7 @@ export const TechStack = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white py-20 relative overflow-hidden">
+    <div className="min-h-screen bg-black text-white py-10 md:py-20 relative overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black" />
       
       <div className="container mx-auto px-4 relative z-10">
@@ -142,29 +142,28 @@ export const TechStack = () => {
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-center mb-16"
+          className="text-center mb-8 md:mb-16"
         >
-          {/* <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600">
-            Tech Stack
-          </h2> */}
-          <h1 className="text-xl text-gray-400 max-w-2xl mx-auto mb-10">
-          I turn chaos into clickable beauty, delivering designs that not only look great but also drive results.
+          <h1 className="text-lg md:text-xl text-gray-400 max-w-2xl mx-auto mb-6 md:mb-10 px-4">
+          I turn complex processes into seamless automation, integrating AI to make workflows smarter and more efficient. By eliminating manual tasks and optimizing systems, I help businesses save time, reduce effort, and scale effortlessly.
           </h1>
         </motion.div>
 
-        <div className="relative h-[700px]">
-          <div className="absolute top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="relative min-h-[500px] md:h-[700px]">
+          <div className="absolute top-[20%] md:top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2 mb-8 md:mb-0">
             <Eyes mouseX={mousePosition.x} mouseY={mousePosition.y} />
           </div>
           
-          {technologies.map((tech, index) => (
-            <TechCard
-              key={index}
-              title={tech.title}
-              description={tech.description}
-              position={tech.position}
-            />
-          ))}
+          <div className="mt-24 md:mt-0 flex flex-col md:block">
+            {technologies.map((tech, index) => (
+              <TechCard
+                key={index}
+                title={tech.title}
+                description={tech.description}
+                position={tech.position}
+              />
+            ))}
+          </div>
         </div>
       </div>
     </div>

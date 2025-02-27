@@ -4,16 +4,16 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const experiences = [
   {
-    title: 'Freelance Developer',
+    title: 'Freelancing',
     company: 'Upwork',
-    period: '2021 - Present',
-    description: "Working as a top-rated freelancer specializing in business automation and integration solutions. Achieved 89% job success rate with over $10K in earnings across 46+ completed projects.",
+    period: '2023 - Present',
+    description: "Working as a top-rated freelancer specializing in business automation and integration solutions. Achieved 98% job success rate with over $10K in earnings across 20+ completed projects.",
     icon: Award,
     skills: ['Make.com', 'Zapier', 'Google Apps Script', 'API Integration', 'Automation'],
     details: [
-      "Completed 46+ successful projects with high client satisfaction",
-      "Maintained 89% job success rate consistently", 
-      "Accumulated over 128 hours of work",
+      "Completed 20+ successful projects with high client satisfaction",
+      "Maintained 98% job success rate consistently", 
+      "Accumulated over 45 hours of work",
       "Specialized in business process automation and integration",
       "Developed custom solutions for various industries"
     ],
@@ -22,29 +22,28 @@ const experiences = [
   {
     title: 'Software Developer',
     company: 'Codeball',
-    period: 'February 2022 - Present',
+    period: 'February 2022 - May 2023',
     description: "Working on developing and automating business solutions for clients, focusing on integrating various platforms and creating scalable systems.",
     icon: Briefcase,
-    skills: ['Make.com', 'Zapier', 'Google Apps Script', 'API Integration', 'Automation'],
+    skills: ['Javascript', 'Node js', 'React', 'API Integration', 'Chrome extension'],
     details: [
       "Led development of automation solutions for multiple clients",
       "Integrated various platforms using APIs and webhooks",
-      "Implemented scalable systems for business process automation",
-      "Mentored team members on automation best practices"
+      "Implemented scalable tools and software for business",
+      "Mentored team members on software development best practices"
     ]
   },
   {
-    title: 'Software Developer',
+    title: 'Junior Web Developer',
     company: 'Zeitic',
     period: 'April 2021 - February 2022',
     description: "Developed and maintained software applications, focusing on creating robust and automated business solutions.",
     icon: Code,
-    skills: ['Business Automation', 'API Integration', 'CRM Systems', 'Cloud Platforms'],
+    skills: ['Website Development', 'API Integration', 'CRM Systems', 'Cloud Platforms'],
     details: [
-      "Developed custom automation workflows",
+      "Developed custom websites for clients",
       "Integrated multiple CRM systems",
       "Created cloud-based solutions",
-      "Optimized business processes through automation"
     ]
   }
 ];

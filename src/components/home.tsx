@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from 'react';
+
 import { Hero } from './Hero';
-import { Scene } from './Scene';
 import { TechStack } from './tech';
 import Timeline from './Timeline';
 import ContactFooter from './footter';
+import ProjectsShowcase from './coursel';
 import { PortfolioSection } from './ev';
 import { motion, useScroll } from 'framer-motion';
 
@@ -21,10 +21,11 @@ function Home() {
       />
       <Hero />
       <TechStack/>
-      {/* <Scene /> */}
       <PortfolioSection/>
       <Timeline/>
+      {/* <ProjectsShowcase /> */}
       <ContactFooter/>
+
       
       
       
