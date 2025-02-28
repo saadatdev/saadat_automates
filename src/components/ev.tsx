@@ -338,7 +338,7 @@ export const PortfolioSection = () => {
                 <div
                   className="absolute inset-x-0 bottom-0 h-[30%] md:h-[30%] bg-cover bg-center opacity-20"
                   style={{
-                    backgroundImage: "url('src/assets/project.PNG')",
+                    backgroundImage: "url('public/project.PNG')",
                   }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1A0B3B]/80 to-transparent opacity-70" />

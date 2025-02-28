@@ -28,7 +28,7 @@ const ProfilePage = () => {
             <div className="relative p-1">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full animate-pulse" />
               <img 
-                src="src\assets\profile.jpg" 
+                src="public\profile.jpg" 
                 alt="Profile"
                 className="relative w-48 h-48 rounded-full object-cover border-4 border-white/20 shadow-2xl shadow-purple-500/20"
               />
