@@ -1,10 +1,12 @@
 import React, { useState, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const TechStackPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('all');
   const categoriesRef = useRef(null);
+  const navigate = useNavigate();
 
   const categories = {
     automation: 'Automation Tools',
@@ -90,6 +92,17 @@ const TechStackPage = () => {
         animate={{ opacity: 1 }}
         className="max-w-7xl mx-auto px-4 py-16 relative z-10"
       >
+        {/* Back Button */}
+        <motion.button
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          onClick={() => navigate('/')}
+          className="absolute top-8 left-8 flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-br from-purple-900/30 to-[#2d1b4d] border border-purple-500/30 hover:bg-purple-500/20 transition-all duration-300 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-purple-500/20"
+        >
+          <ChevronLeft className="w-5 h-5 text-purple-300" />
+          <span className="text-purple-300 font-medium">Back</span>
+        </motion.button>
         <div className="text-center space-y-6 mb-20">
           <motion.h1 
             initial={{ y: -50, opacity: 0 }}

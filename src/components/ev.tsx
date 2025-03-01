@@ -117,7 +117,7 @@ export const PortfolioSection = () => {
             <div className="text-[#D1D5DB] text-center">
               <motion.img
                 whileHover={{ scale: 1.05 }}
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCtbQoA16OpDrn0CPz6mgjPFdyZmvL6J_kLw&s"
+                src="/locaiton.png"
                 alt="Islamabad Map"
                 className="w-full h-60 object-cover rounded-lg mb-10"
               />
@@ -338,7 +338,7 @@ export const PortfolioSection = () => {
                 <div
                   className="absolute inset-x-0 bottom-0 h-[30%] md:h-[30%] bg-cover bg-center opacity-20"
                   style={{
-                    backgroundImage: "url('public/project.PNG')",
+                    backgroundImage: "url('/project.PNG')",
                   }}
                 >
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1A0B3B]/80 to-transparent opacity-70" />

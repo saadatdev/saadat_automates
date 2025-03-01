@@ -1,8 +1,11 @@
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Github, Twitter, Linkedin, Mail, ChevronDown } from 'lucide-react';
+import { Github, Twitter, Linkedin, Mail, ChevronDown, ArrowLeft } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 
 const ProfilePage = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen w-full bg-[#0A0118] text-white relative overflow-hidden">
       {/* Subtle gradient background */}
@@ -15,6 +18,18 @@ const ProfilePage = () => {
         transition={{ duration: 1 }}
         className="max-w-6xl mx-auto px-4 py-12 relative z-10"
       >
+        {/* Back Button */}
+        <motion.button
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.5 }}
+          onClick={() => navigate('/')}
+          className="flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors mb-8 ml-[-20px]"
+        >
+          <ArrowLeft className="w-5 h-5" />
+          <span>Back to Home</span>
+        </motion.button>
+
         {/* Hero Section */}
         <div className="flex flex-col items-center justify-center min-h-[80vh] relative">
           {/* Profile Image with Elegant Design */}
@@ -28,7 +43,7 @@ const ProfilePage = () => {
             <div className="relative p-1">
               <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full animate-pulse" />
               <img 
-                src="public\profile.jpg" 
+                src="/profile.jpg" 
                 alt="Profile"
                 className="relative w-48 h-48 rounded-full object-cover border-4 border-white/20 shadow-2xl shadow-purple-500/20"
               />
