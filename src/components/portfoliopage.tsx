@@ -1,12 +1,21 @@
 import React, { useState } from 'react';
 import { motion, useScroll, useSpring } from 'framer-motion';
-import { ArrowRight, ExternalLink, Github, Star, Code, Zap, Home } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { ArrowRight, ExternalLink, Github, Star, Code, Zap, ChevronLeft } from 'lucide-react';
 import { projects } from './projectsData'; // Import from centralized file
 
+type Category = 'all' | 'tool' | 'crm' | 'bot' | 'ai';
+
+interface Project {
+  id: number;
+  category: string;
+  [key: string]: any;
+}
+
 const PortfolioPage = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedCategory, setSelectedCategory] = useState<Category>('all');
   const { scrollYProgress } = useScroll();
+  const navigate = useNavigate();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
@@ -15,14 +24,14 @@ const PortfolioPage = () => {
 
   const filteredProjects = selectedCategory === 'all' 
     ? projects 
-    : projects.filter(project => project.category === selectedCategory);
+    : projects.filter(project => project.categories.includes(selectedCategory));
 
   const categories = [
     { id: 'all', icon: Star, label: "All" },
-    { id: 'web', icon: Code, label: "Web" },
-    { id: 'mobile', icon: Zap, label: "Mobile" },
-    { id: 'automation', icon: ArrowRight, label: "Automation" },
-    { id: 'ai', icon: ExternalLink, label: "AI" }
+    { id: 'crm', icon: Code, label: "CRMs" },
+    { id: 'tool', icon: Zap, label: "Business Process Automations" },
+    { id: 'bot', icon: ArrowRight, label: "Chatbots" },
+    { id: 'ai', icon: ExternalLink, label: "AI Automations" }
   ];
 
   const containerVariants = {
@@ -58,18 +67,23 @@ const PortfolioPage = () => {
     }
   };
 
+  const handleHomeClick = () => {
+    navigate('/'); // Simplified to use navigate directly
+  };
+
   return (
     <div className="min-h-screen bg-[#0A0A14] text-[#FFFFFF] relative overflow-hidden pb-20">
-      {/* Home Button */}
-      <Link to="/">
-        <motion.button
-          whileHover={{ scale: 1.1 }}
-          whileTap={{ scale: 0.9 }}
-          className="fixed top-4 left-4 z-50 p-3 bg-gradient-to-r from-[#9D4EDD] to-[#F472B6] rounded-full shadow-lg shadow-[#9D4EDD]/30"
-        >
-          <Home className="w-6 h-6 text-white" />
-        </motion.button>
-      </Link>
+      {/* Home Button - Adjusted Position and Simplified */}
+      <motion.button
+        initial={{ opacity: 0, x: -20 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.5 }}
+        onClick={handleHomeClick}
+        className="fixed top-6 left-6 z-50 flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-br from-purple-900/30 to-[#2d1b4d] border border-purple-500/30 hover:bg-purple-500/20 transition-all duration-300 backdrop-blur-sm shadow-md hover:shadow-lg hover:shadow-purple-500/20"
+      >
+        <ChevronLeft className="w-5 h-5 text-purple-300" />
+        <span className="text-purple-300 font-medium">Back</span>
+      </motion.button>
 
       {/* Progress Bar */}
       <motion.div
@@ -117,10 +131,9 @@ const PortfolioPage = () => {
         >
           {categories.map(({ id, icon: Icon, label }) => (
             <motion.button
-              key={id}
-              whileHover={{ scale: 1.05 }}
+              key={id}              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => setSelectedCategory(id)}
+              onClick={() => setSelectedCategory(id as Category)}
               className={`px-4 sm:px-6 py-2 sm:py-3 rounded-xl flex items-center gap-2 transition-all duration-300 ${
                 selectedCategory === id 
                   ? 'bg-gradient-to-r from-[#9D4EDD] to-[#F472B6] text-[#FFFFFF] shadow-lg shadow-[#9D4EDD]/30' 
