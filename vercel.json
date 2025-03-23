@@ -1,8 +1,6 @@
 {
   "rewrites": [
-    {
-      "source": "/project/:id",
-      "destination": "/"
-    }
+    { "source": "/(.*)", "destination": "/" }
   ]
 }
+
