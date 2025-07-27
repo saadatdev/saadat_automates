@@ -16,7 +16,7 @@ function Home() {
   return (
     <div className="relative">
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-purple-600 origin-left z-50"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-600 to-cyan-600 origin-left z-50"
         style={{ scaleX: scrollYProgress }}
       />
       <Hero />

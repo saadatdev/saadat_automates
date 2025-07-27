@@ -34,13 +34,13 @@ const Eyes: React.FC<{ mouseX: number; mouseY: number; focusOnEmail: boolean }> 
       <div className="w-14 h-14 md:w-20 md:h-20 bg-[#FFFFFF]/20 rounded-full flex items-center justify-center shadow-lg">
         <div 
           ref={leftEyeRef}
-          className={`${focusOnEmail ? 'w-8 h-8 md:w-12 md:h-12' : 'w-6 h-6 md:w-10 md:h-10'} rounded-full bg-white transition-all duration-300`}
+          className="w-5 h-5 md:w-8 md:h-8 rounded-full bg-cyan-600"
         />
       </div>
       <div className="w-14 h-14 md:w-20 md:h-20 bg-[#FFFFFF]/20 rounded-full flex items-center justify-center shadow-lg">
         <div 
           ref={rightEyeRef}
-          className={`${focusOnEmail ? 'w-8 h-8 md:w-12 md:h-12' : 'w-6 h-6 md:w-10 md:h-10'} rounded-full bg-white transition-all duration-300`}
+          className="w-5 h-5 md:w-8 md:h-8 rounded-full bg-cyan-600"
         />
       </div>
     </div>
@@ -65,17 +65,17 @@ const ContactFooter = () => {
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8 }}
-      className="w-full max-w-[1200px] mx-auto min-h-[200px] bg-gradient-to-r from-[#0A0A0A] to-[#1A1A1A] text-[#FFFFFF] py-6 md:py-8 px-4 md:px-12 rounded-3xl shadow-2xl border border-[#A855F7]/30 backdrop-blur-xl mb-8 md:mb-16"
+      className="w-full max-w-[1200px] mx-auto min-h-[200px] bg-gradient-to-r from-slate-800 to-slate-700 text-[#FFFFFF] py-6 md:py-8 px-4 md:px-12 rounded-3xl shadow-2xl border border-cyan-500/30 backdrop-blur-xl mb-8 md:mb-16"
     >
       <div className="flex flex-col md:flex-row items-center md:justify-between h-full gap-8 md:gap-0">
         {/* Left Section: Contact Info and Social */}
         <div className="flex flex-col gap-6 md:gap-8 flex-grow">
           <div className="space-y-4 text-center md:text-left">
-            <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-purple-400 to-pink-600 bg-clip-text text-transparent">
+            <h3 className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
               Let's Connect!
             </h3>
             <motion.a 
-              href="mailto:lehrasibroy@gmail.com" 
+              href="mailto:saadatbbaig43@gmail.com" 
               className="text-2xl md:text-4xl font-medium text-[#FFFFFF] hover:text-[#A855F7] transition-colors duration-300 block break-all md:break-normal"
               onMouseEnter={() => setIsEmailHovered(true)}
               onMouseLeave={() => setIsEmailHovered(false)}
@@ -85,38 +85,38 @@ const ContactFooter = () => {
                 transition: { duration: 0.3 }
               }}
             >
-              lehrasibroy@gmail.com
+              saadatbbaig43@gmail.com
             </motion.a>
           </div>
 
           <div className="flex items-center justify-center md:justify-start gap-8 md:gap-10">
             <motion.a
-              href="https://linkedin.com/in/lehrasibroy"
+              href="https://linkedin.com/in/saadatbaig"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.1, color: '#A855F7' }}
+              whileHover={{ scale: 1.1, color: '#22D3EE' }}
               transition={{ duration: 0.3 }}
-              className="text-[#D1D5DB] hover:text-[#A855F7] transition-colors duration-300"
+              className="text-[#D1D5DB] hover:text-cyan-400 transition-colors duration-300"
             >
               <Linkedin size={24} className="md:w-7 md:h-7" />
             </motion.a>
             <motion.a
-              href="https://twitter.com/lehrasibroy"
+              href="https://twitter.com/saadatbaig"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.1, color: '#A855F7' }}
+              whileHover={{ scale: 1.1, color: '#22D3EE' }}
               transition={{ duration: 0.3 }}
-              className="text-[#D1D5DB] hover:text-[#A855F7] transition-colors duration-300"
+              className="text-[#D1D5DB] hover:text-cyan-400 transition-colors duration-300"
             >
               <Twitter size={24} className="md:w-7 md:h-7" />
             </motion.a>
             <motion.a
-              href="https://github.com/lehrasibroy"
+              href="https://github.com/saadatbaig"
               target="_blank"
               rel="noopener noreferrer"
-              whileHover={{ scale: 1.1, color: '#A855F7' }}
+              whileHover={{ scale: 1.1, color: '#22D3EE' }}
               transition={{ duration: 0.3 }}
-              className="text-[#D1D5DB] hover:text-[#A855F7] transition-colors duration-300"
+              className="text-[#D1D5DB] hover:text-cyan-400 transition-colors duration-300"
             >
               <Github size={24} className="md:w-7 md:h-7" />
             </motion.a>

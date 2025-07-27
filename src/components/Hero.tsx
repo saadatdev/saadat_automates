@@ -54,9 +54,9 @@ const StatCard = ({ value, label, delay = 0 }: { value: number; label: string; d
       initial={{ opacity: 0, y: 20 }}
       animate={{ opacity: 1, y: 0 }}
       transition={{ delay, duration: 0.8 }}
-      className="relative bg-gradient-to-r from-violet-900/10 to-fuchsia-900/10 p-4 md:p-6 rounded-xl border border-purple-500/20 backdrop-blur-md"
+      className="relative bg-gradient-to-r from-slate-800/50 to-slate-700/50 p-4 md:p-6 rounded-xl border border-cyan-500/20 backdrop-blur-md"
     >
-      <h3 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-violet-400 to-fuchsia-500">
+      <h3 className="text-3xl md:text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400">
         {count}+
       </h3>
       <p className="text-sm md:text-base text-gray-400 font-medium mt-2">{label}</p>
@@ -86,8 +86,8 @@ export const Hero = () => {
       className="h-screen w-full relative text-white overflow-hidden"
     >
       {/* Background gradients */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-[#0c0118] to-[#0f0224] z-0" />
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-transparent to-transparent z-0" />
+      <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900 z-0" />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-900/30 via-transparent to-transparent z-0" />
       
       {/* Background 3D Scene */}
       <div className="absolute inset-0 z-0">
@@ -108,8 +108,8 @@ export const Hero = () => {
               className="text-4xl sm:text-5xl md:text-7xl font-extrabold mb-4 md:mb-6"
             >
               <span className="block">Hey, I'm</span>
-              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-violet-400 via-purple-400 to-fuchsia-500">
-                Lehrasib Roy
+              <span className="block bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-cyan-400 to-teal-400">
+                Saadat Baig
               </span>
             </motion.h1>
             
@@ -122,9 +122,9 @@ export const Hero = () => {
               <p className="text-lg sm:text-xl md:text-2xl text-gray-300 mb-4 font-light">
                 Transforming businesses through intelligent automation and AI integration
               </p>
-              <div className="flex flex-wrap items-center gap-3 md:gap-4 text-violet-300 mb-8 md:mb-10">
+              <div className="flex flex-wrap items-center gap-3 md:gap-4 text-cyan-300 mb-8 md:mb-10">
                 <span className="text-base md:text-lg font-medium">★ 95% Job Success</span>
-                <span className="w-1.5 h-1.5 rounded-full bg-violet-400"></span>
+                <span className="w-1.5 h-1.5 rounded-full bg-cyan-400"></span>
                 <span className="text-base md:text-lg font-medium">$40K+ Earnings</span>
               </div>
             </motion.div>
@@ -137,12 +137,12 @@ export const Hero = () => {
               className="flex gap-3 md:gap-4 mb-8 md:mb-12"
             >
               <motion.a
-                href="https://www.upwork.com/freelancers/~01f97a5fe71022a58c?mp_source=share"
+                href="https://www.upwork.com/freelancers/~01c0f679674f1403e0?mp_source=share"
                 target="_blank"
                 rel="noopener noreferrer"
-                whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(139, 92, 246, 0.5)" }}
+                whileHover={{ scale: 1.05, boxShadow: "0 0 20px rgba(34, 211, 238, 0.5)" }}
                 whileTap={{ scale: 0.95 }}
-                className="px-4 md:px-6 py-2.5 md:py-3 rounded-lg bg-gradient-to-r from-violet-600 to-fuchsia-600 font-medium text-white text-sm md:text-base"
+                className="px-4 md:px-6 py-2.5 md:py-3 rounded-lg bg-gradient-to-r from-blue-600 to-cyan-600 font-medium text-white text-sm md:text-base"
               >
                 Hire Me
               </motion.a>
@@ -150,7 +150,7 @@ export const Hero = () => {
                 onClick={handlePortfolioClick}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-4 md:px-6 py-2.5 md:py-3 rounded-lg border border-violet-500/50 font-medium text-violet-300 hover:bg-violet-800/20 transition-colors duration-300 text-sm md:text-base"
+                className="px-4 md:px-6 py-2.5 md:py-3 rounded-lg border border-cyan-500/50 font-medium text-cyan-300 hover:bg-cyan-800/20 transition-colors duration-300 text-sm md:text-base"
               >
                 View Portfolio
               </motion.button>

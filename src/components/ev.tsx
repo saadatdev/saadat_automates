@@ -74,7 +74,7 @@ export const PortfolioSection = () => {
   }));
 
   return (
-    <div className="min-h-screen w-full bg-[#000000] text-[#FFFFFF] relative overflow-hidden pt-8 mt-0">
+    <div className="min-h-screen w-full bg-slate-900 text-[#FFFFFF] relative overflow-hidden pt-8 mt-0">
       {/* Animated Stars Background */}
       {stars.map((star, i) => (
         <Star key={i} style={star.style} />
@@ -85,9 +85,9 @@ export const PortfolioSection = () => {
         className="absolute inset-0 opacity-20"
         animate={{
           background: [
-            "radial-gradient(circle at 50% 50%, #8B5CF6 0%, transparent 50%)",
-            "radial-gradient(circle at 30% 70%, #EC4899 0%, transparent 50%)",
-            "radial-gradient(circle at 70% 30%, #8B5CF6 0%, transparent 50%)",
+            "radial-gradient(circle at 50% 50%, #0EA5E9 0%, transparent 50%)",
+            "radial-gradient(circle at 30% 70%, #22D3EE 0%, transparent 50%)",
+            "radial-gradient(circle at 70% 30%, #0EA5E9 0%, transparent 50%)",
           ],
         }}
         transition={{
@@ -108,7 +108,7 @@ export const PortfolioSection = () => {
             animate={{ opacity: 1, x: 0 }}
             whileHover={{ scale: 1.02, y: -5, cursor: "pointer" }}
             transition={{ duration: 0.2 }}
-            className="w-full md:w-1/4 bg-gradient-to-br from-[#1A0B3B] to-[#2D1B4D] rounded-2xl p-6 shadow-lg border border-[#8B5CF6/20] transition-all duration-300 backdrop-blur-sm"
+            className="w-full md:w-1/4 bg-gradient-to-br from-slate-800 to-slate-700 rounded-2xl p-6 shadow-lg border border-cyan-500/20 transition-all duration-300 backdrop-blur-sm"
           >
             <div className="flex items-center gap-4 mb-4">
               <MapPin className="w-8 h-10" />
@@ -135,7 +135,7 @@ export const PortfolioSection = () => {
               whileHover={{ scale: 1.02, y: -5, cursor: "pointer" }}
               transition={{ duration: 0.2 }}
               onClick={handleSeeMoreClick}
-              className="bg-gradient-to-br from-[#1A0B3B] to-[#2D1B4D] rounded-2xl p-6 md:p-6 shadow-lg border border-[#8B5CF6/20] transition-all duration-300 h-64 md:h-64 relative backdrop-blur-sm"
+              className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-2xl p-6 md:p-6 shadow-lg border border-cyan-500/20 transition-all duration-300 h-64 md:h-64 relative backdrop-blur-sm"
             >
               <div className="flex items-center gap-4 md:gap-4 mb-4 md:mb-4">
                 <motion.div
@@ -216,7 +216,7 @@ export const PortfolioSection = () => {
               </div>
               <motion.button
                 whileHover={{ scale: 1.1, x: 10 }}
-                className="absolute bottom-14 right-14 md:bottom-14 md:right-14 flex items-center gap-2 text-[#A78BFA] hover:text-[#8B5CF6] transition-colors"
+                className="absolute bottom-14 right-14 md:bottom-14 md:right-14 flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors"
               >
                 <span className="text-sm md:text-sm">See More</span>
                 <ArrowRight className="w-4 md:w-4 h-4 md:h-4" />
@@ -232,7 +232,7 @@ export const PortfolioSection = () => {
                 whileHover={{ scale: 1.02, y: -5, cursor: "pointer" }}
                 transition={{ duration: 0.2 }}
                 onClick={handleProfileClick}
-                className="bg-gradient-to-br from-[#2A1547] to-[#3B1E54] rounded-2xl p-6 shadow-md border border-[#8B5CF6/20] backdrop-blur-sm transition-all duration-300 h-48 relative overflow-hidden group"
+                className="bg-gradient-to-br from-slate-700 to-slate-600 rounded-2xl p-6 shadow-md border border-cyan-500/20 backdrop-blur-sm transition-all duration-300 h-48 relative overflow-hidden group"
               >
                 <div className="flex items-center gap-4 mb-2">
                   <User className="w-6 h-6" />
@@ -244,7 +244,7 @@ export const PortfolioSection = () => {
                   <div className="relative w-full h-full flex items-center justify-center">
                     {/* Animated background elements */}
                     <motion.div
-                      className="absolute w-32 h-32 bg-[#8B5CF6]/20 rounded-full"
+                      className="absolute w-32 h-32 bg-cyan-500/20 rounded-full"
                       animate={{
                         scale: [1, 1.2, 1],
                         opacity: [0.3, 0.5, 0.3],
@@ -256,7 +256,7 @@ export const PortfolioSection = () => {
                       }}
                     />
                     <motion.div
-                      className="absolute w-24 h-24 bg-[#EC4899]/20 rounded-full"
+                      className="absolute w-24 h-24 bg-blue-500/20 rounded-full"
                       animate={{
                         scale: [1.2, 1, 1.2],
                         opacity: [0.5, 0.3, 0.5],
@@ -270,9 +270,9 @@ export const PortfolioSection = () => {
 
                     {/* Profile content */}
                     <div className="z-10 text-center">
-                      <div className="w-16 h-16 bg-gradient-to-r from-[#8B5CF6] to-[#EC4899] rounded-full mx-auto mb-2 flex items-center justify-center">
+                      <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full mx-auto mb-2 flex items-center justify-center">
                         <span className="text-xl font-bold text-[#FFFFFF]">
-                          LR
+                          SB
                         </span>
                       </div>
                       <p className="text-sm text-[#D1D5DB] mb-2">
@@ -281,20 +281,20 @@ export const PortfolioSection = () => {
                       <div className="flex justify-center gap-2">
                         <motion.span
                           whileHover={{ scale: 1.1 }}
-                          className="px-2 py-1 bg-[#8B5CF6]/20 rounded-full text-xs text-[#A78BFA]"
+                          className="px-2 py-1 bg-cyan-500/20 rounded-full text-xs text-cyan-300"
                         >
                           Automation
                         </motion.span>
                         <motion.span
                           whileHover={{ scale: 1.1 }}
-                          className="px-2 py-1 bg-[#EC4899]/20 rounded-full text-xs text-[#A78BFA]"
+                          className="px-2 py-1 bg-blue-500/20 rounded-full text-xs text-cyan-300"
                         >
                           AI
                         </motion.span>
                       </div>
                     </div>
                   </div>
-                  <motion.div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-[#8B5CF6]/90 to-[#EC4899]/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
+                  <motion.div className="absolute inset-0 flex items-center justify-center bg-gradient-to-br from-blue-500/90 to-cyan-500/90 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
                     <span className="text-[#FFFFFF] flex items-center gap-2">
                       View Profile <ArrowRight className="w-4 h-4" />
                     </span>
@@ -309,7 +309,7 @@ export const PortfolioSection = () => {
                 whileHover={{ scale: 1.02, y: -5, cursor: "pointer" }}
                 transition={{ duration: 0.2 }}
                 onClick={handlePortfolioClick}
-                className="bg-gradient-to-br from-[#1A0B3B] to-[#2D1B4D] rounded-2xl p-6 shadow-md border border-[#8B5CF6/20] backdrop-blur-sm transition-all duration-300 h-48 overflow-hidden"
+                className="bg-gradient-to-br from-slate-800 to-slate-700 rounded-2xl p-6 shadow-md border border-cyan-500/20 backdrop-blur-sm transition-all duration-300 h-48 overflow-hidden"
               >
                 <div className="relative z-10">
                   <div className="flex items-center gap-4 mb-2">
@@ -341,15 +341,15 @@ export const PortfolioSection = () => {
                     backgroundImage: "url('/project.PNG')",
                   }}
                 >
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1A0B3B]/80 to-transparent opacity-70" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-800/80 to-transparent opacity-70" />
                 </div>
 
                 {/* Subtle Glow Effect */}
-                <div className="absolute inset-0 bg-[#D7B9FF]/30 rounded-2xl blur-md opacity-20 pointer-events-none" />
+                <div className="absolute inset-0 bg-cyan-400/30 rounded-2xl blur-md opacity-20 pointer-events-none" />
 
                 {/* Hover Gradient Overlay */}
                 <motion.div
-                  className="absolute inset-0 bg-gradient-to-br from-[#9D4EDD]/20 to-[#F472B6]/20 opacity-0 hover:opacity-30 transition-opacity duration-500"
+                  className="absolute inset-0 bg-gradient-to-br from-blue-500/20 to-cyan-500/20 opacity-0 hover:opacity-30 transition-opacity duration-500"
                   initial={{ opacity: 0 }}
                   animate={{ opacity: 0.1 }}
                   transition={{

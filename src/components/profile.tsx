@@ -7,9 +7,9 @@ const ProfilePage = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen w-full bg-[#0A0118] text-white relative overflow-hidden">
+    <div className="min-h-screen w-full bg-slate-900 text-white relative overflow-hidden">
       {/* Subtle gradient background */}
-      <div className="absolute inset-0 bg-gradient-to-br from-violet-900/10 via-fuchsia-900/5 to-transparent" />
+      <div className="absolute inset-0 bg-gradient-to-br from-slate-700/20 via-slate-600/10 to-transparent" />
       <div className="absolute inset-0 bg-[url('/noise.png')] opacity-10 mix-blend-overlay" />
 
       <motion.div 
@@ -24,7 +24,7 @@ const ProfilePage = () => {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.5 }}
           onClick={() => navigate('/')}
-          className="flex items-center gap-2 text-purple-400 hover:text-purple-300 transition-colors mb-8 ml-[-20px]"
+          className="flex items-center gap-2 text-cyan-400 hover:text-cyan-300 transition-colors mb-8 ml-[-20px]"
         >
           <ArrowLeft className="w-5 h-5" />
           <span>Back to Home</span>
@@ -39,9 +39,9 @@ const ProfilePage = () => {
             transition={{ duration: 1, type: "spring" }}
             className="relative"
           >
-            <div className="absolute -inset-1 bg-gradient-to-r from-purple-500 to-pink-500 rounded-full opacity-75 blur" />
+            <div className="absolute -inset-1 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-full opacity-75 blur" />
             <div className="relative p-1">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600 to-pink-600 rounded-full animate-pulse" />
+              <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full animate-pulse" />
               <img 
                 src="/profile.jpg" 
                 alt="Profile"
@@ -56,8 +56,8 @@ const ProfilePage = () => {
             transition={{ delay: 0.5 }}
             className="text-center mt-12 space-y-8"
           >
-            <h1 className="text-7xl font-bold tracking-tight bg-gradient-to-r from-purple-400 via-pink-500 to-red-400 text-transparent bg-clip-text animate-gradient">
-              Lehrasib Roy
+            <h1 className="text-7xl font-bold tracking-tight bg-gradient-to-r from-blue-400 via-cyan-500 to-teal-400 text-transparent bg-clip-text animate-gradient">
+              Saadat Baig
             </h1>
             
             <p className="text-2xl text-gray-300 font-light italic">
@@ -95,7 +95,7 @@ const ProfilePage = () => {
             transition={{ duration: 2, repeat: Infinity }}
             className="absolute bottom-10"
           >
-            <ChevronDown className="w-8 h-8 text-purple-400" />
+            <ChevronDown className="w-8 h-8 text-cyan-400" />
           </motion.div>
         </div>
 
@@ -109,7 +109,7 @@ const ProfilePage = () => {
             transition={{ duration: 0.8 }}
             className="max-w-3xl mx-auto text-center space-y-8"
           >
-            <h2 className="text-4xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text">About Me</h2>
+            <h2 className="text-4xl font-bold bg-gradient-to-r from-blue-400 to-cyan-400 text-transparent bg-clip-text">About Me</h2>
             <p className="text-xl text-gray-300 leading-relaxed">
               I'm a passionate developer specializing in business automation and AI integration. 
               With over 3 years of experience, I help companies streamline their operations using 
@@ -138,7 +138,7 @@ const ProfilePage = () => {
                 transition={{ duration: 0.8, delay: index * 0.2 }}
                 className="space-y-6"
               >
-                <h3 className="text-3xl font-bold text-center bg-gradient-to-r from-purple-400 to-pink-400 text-transparent bg-clip-text">
+                <h3 className="text-3xl font-bold text-center bg-gradient-to-r from-blue-400 to-cyan-400 text-transparent bg-clip-text">
                   {section.title}
                 </h3>
                 <ul className="space-y-4">
@@ -150,11 +150,11 @@ const ProfilePage = () => {
                       transition={{ delay: i * 0.1 }}
                       className="flex items-center gap-4 group"
                     >
-                      <div className="h-px flex-1 bg-gradient-to-r from-purple-500/50 to-transparent" />
+                      <div className="h-px flex-1 bg-gradient-to-r from-cyan-500/50 to-transparent" />
                       <span className="text-gray-300 group-hover:text-white transition-colors whitespace-nowrap">
                         {item}
                       </span>
-                      <div className="h-px flex-1 bg-gradient-to-l from-purple-500/50 to-transparent" />
+                      <div className="h-px flex-1 bg-gradient-to-l from-cyan-500/50 to-transparent" />
                     </motion.li>
                   ))}
                 </ul>

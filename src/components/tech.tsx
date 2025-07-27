@@ -36,13 +36,13 @@ const Eyes: React.FC<EyesProps> = ({ mouseX, mouseY }) => {
       <div className="w-12 h-12 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center">
         <div 
           ref={leftEyeRef}
-          className="w-5 h-5 md:w-8 md:h-8 rounded-full bg-purple-600"
+          className="w-5 h-5 md:w-8 md:h-8 rounded-full bg-cyan-600"
         />
       </div>
       <div className="w-12 h-12 md:w-20 md:h-20 bg-white rounded-full flex items-center justify-center">
         <div 
           ref={rightEyeRef}
-          className="w-5 h-5 md:w-8 md:h-8 rounded-full bg-purple-600"
+          className="w-5 h-5 md:w-8 md:h-8 rounded-full bg-cyan-600"
         />
       </div>
     </div>
@@ -68,9 +68,9 @@ const TechCard: React.FC<{ title: string; description: string; position: string 
       transition={{ duration: 0.5 }}
       className={`relative md:absolute ${desktopPositionStyles} w-full md:w-80 cursor-pointer mb-4 md:mb-0`}
     >
-      <div className="absolute -inset-0.5 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
-      <div className="relative bg-black/50 backdrop-blur-xl p-4 md:p-6 rounded-2xl border border-purple-500/20 hover:bg-purple-900/50 transition-all duration-300">
-        <h3 className="text-xl md:text-2xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-600 hover:text-white transition-colors duration-300">
+      <div className="absolute -inset-0.5 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-2xl blur opacity-30 group-hover:opacity-100 transition duration-1000 group-hover:duration-200" />
+      <div className="relative bg-slate-800/50 backdrop-blur-xl p-4 md:p-6 rounded-2xl border border-cyan-500/20 hover:bg-cyan-900/50 transition-all duration-300">
+        <h3 className="text-xl md:text-2xl font-bold text-center bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-cyan-400 hover:text-white transition-colors duration-300">
           {title}
         </h3>
       </div>
@@ -134,8 +134,8 @@ export const TechStack = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-black text-white py-10 md:py-20 relative overflow-hidden">
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black" />
+    <div className="min-h-screen bg-slate-900 text-white py-10 md:py-20 relative overflow-hidden">
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-700/30 via-slate-900 to-black" />
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div

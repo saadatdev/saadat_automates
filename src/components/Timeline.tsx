@@ -83,7 +83,7 @@ function Modal({ isOpen, onClose, item }) {
   return (
     <AnimatePresence>
       <motion.div
-        className="fixed inset-0 bg-black/60 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
+        className="fixed inset-0 bg-slate-900/80 z-50 flex items-center justify-center p-4 backdrop-blur-sm"
         variants={overlayVariants}
         initial="hidden"
         animate="visible"
@@ -91,29 +91,29 @@ function Modal({ isOpen, onClose, item }) {
         onClick={onClose}
       >
         <motion.div
-          className="bg-gradient-to-br from-gray-900 to-black rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border border-purple-500/20"
+          className="bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 max-w-2xl w-full max-h-[90vh] overflow-y-auto relative border border-cyan-500/20"
           variants={modalVariants}
           onClick={e => e.stopPropagation()}
         >
           <button
             onClick={onClose}
-            className="absolute top-4 right-4 p-2 rounded-full hover:bg-purple-900/30 transition-colors text-purple-400"
+            className="absolute top-4 right-4 p-2 rounded-full hover:bg-cyan-900/30 transition-colors text-cyan-400"
           >
             <X className="w-6 h-6" />
           </button>
 
           <div className="flex items-center gap-4 mb-6">
-            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-900/50 to-purple-600/50 flex items-center justify-center">
-              <item.icon className="w-6 h-6 text-purple-400" />
+            <div className="w-12 h-12 rounded-full bg-gradient-to-r from-slate-700/50 to-cyan-600/50 flex items-center justify-center">
+              <item.icon className="w-6 h-6 text-cyan-400" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">{item.title}</h3>
+              <h3 className="text-2xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">{item.title}</h3>
               <p className="text-gray-400">{item.company}</p>
             </div>
           </div>
 
           <div className="flex items-center gap-2 text-gray-400 mb-4">
-            <Calendar size={16} className="text-purple-400" />
+            <Calendar size={16} className="text-cyan-400" />
             <span>{item.period}</span>
           </div>
 
@@ -122,7 +122,7 @@ function Modal({ isOpen, onClose, item }) {
           </p>
 
           <div className="mb-6">
-            <h4 className="text-lg font-semibold mb-4 text-purple-400">Key Responsibilities & Achievements</h4>
+            <h4 className="text-lg font-semibold mb-4 text-cyan-400">Key Responsibilities & Achievements</h4>
             <ul className="space-y-3">
               {item.details.map((detail, index) => (
                 <motion.li
@@ -132,7 +132,7 @@ function Modal({ isOpen, onClose, item }) {
                   transition={{ delay: index * 0.1 }}
                   className="flex items-start gap-3"
                 >
-                  <div className="w-1.5 h-1.5 rounded-full bg-purple-400 mt-2.5" />
+                  <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 mt-2.5" />
                   <span className="text-gray-300">{detail}</span>
                 </motion.li>
               ))}
@@ -140,7 +140,7 @@ function Modal({ isOpen, onClose, item }) {
           </div>
 
           <div>
-            <h4 className="text-lg font-semibold mb-4 text-purple-400">Technologies & Skills</h4>
+            <h4 className="text-lg font-semibold mb-4 text-cyan-400">Technologies & Skills</h4>
             <div className="flex flex-wrap gap-2">
               {item.skills.map((skill, index) => (
                 <motion.span
@@ -148,7 +148,7 @@ function Modal({ isOpen, onClose, item }) {
                   initial={{ opacity: 0, scale: 0.8 }}
                   animate={{ opacity: 1, scale: 1 }}
                   transition={{ delay: index * 0.1 }}
-                  className="px-3 py-1 bg-gradient-to-r from-purple-900/50 to-purple-600/50 text-purple-300 rounded-full text-sm font-medium border border-purple-500/20"
+                  className="px-3 py-1 bg-gradient-to-r from-slate-700/50 to-cyan-600/50 text-cyan-300 rounded-full text-sm font-medium border border-cyan-500/20"
                 >
                   {skill}
                 </motion.span>
@@ -166,25 +166,25 @@ function TimelineCard({ item, onSelect, isLeft }) {
   
   return (
     <motion.div
-      className={`relative bg-gradient-to-br from-gray-900 to-black rounded-2xl shadow-xl overflow-hidden border border-purple-500/20 hover:border-purple-500/40 transition-all duration-300 w-full md:w-[calc(50%-2rem)] ${isLeft ? 'md:mr-auto' : 'md:ml-auto'}`}
+      className={`relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl shadow-xl overflow-hidden border border-cyan-500/20 hover:border-cyan-500/40 transition-all duration-300 w-full md:w-[calc(50%-2rem)] ${isLeft ? 'md:mr-auto' : 'md:ml-auto'}`}
       whileHover={{ y: -5, scale: 1.02 }}
       transition={{ type: "spring", stiffness: 300, damping: 20 }}
     >
-      <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-purple-400 to-pink-600" />
+      <div className="absolute top-0 left-0 w-1 h-full bg-gradient-to-b from-blue-400 to-cyan-400" />
       <div className="p-8">
         <div className="flex items-start gap-4">
-          <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-900/50 to-purple-600/50 flex items-center justify-center flex-shrink-0">
-            <Icon className="w-6 h-6 text-purple-400" />
+          <div className="w-12 h-12 rounded-full bg-gradient-to-r from-slate-700/50 to-cyan-600/50 flex items-center justify-center flex-shrink-0">
+            <Icon className="w-6 h-6 text-cyan-400" />
           </div>
           <div className="flex-1">
             <div className="flex items-center justify-between mb-2">
-              <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600">{item.title}</h3>
+              <h3 className="text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400">{item.title}</h3>
               {item.link && (
                 <a 
                   href={item.link} 
                   target="_blank" 
                   rel="noopener noreferrer"
-                  className="text-purple-400 hover:text-purple-300 transition-colors"
+                  className="text-cyan-400 hover:text-cyan-300 transition-colors"
                 >
                   <ExternalLink size={20} />
                 </a>
@@ -192,7 +192,7 @@ function TimelineCard({ item, onSelect, isLeft }) {
             </div>
             <p className="text-gray-400 font-medium">{item.company}</p>
             <div className="flex items-center gap-2 text-gray-500 mt-2 mb-4">
-              <Calendar size={16} className="text-purple-400" />
+              <Calendar size={16} className="text-cyan-400" />
               <span className="text-gray-400">{item.period}</span>
             </div>
             <p className="text-gray-300 mb-6 leading-relaxed">
@@ -202,7 +202,7 @@ function TimelineCard({ item, onSelect, isLeft }) {
               {item.skills.map((skill, index) => (
                 <span
                   key={index}
-                  className="px-3 py-1 bg-gradient-to-r from-purple-900/50 to-purple-600/50 text-purple-300 rounded-full text-sm font-medium border border-purple-500/20"
+                  className="px-3 py-1 bg-gradient-to-r from-slate-700/50 to-cyan-600/50 text-cyan-300 rounded-full text-sm font-medium border border-cyan-500/20"
                 >
                   {skill}
                 </span>
@@ -210,7 +210,7 @@ function TimelineCard({ item, onSelect, isLeft }) {
             </div>
             <button
               onClick={() => onSelect(item)}
-              className="mt-6 text-purple-400 hover:text-purple-300 transition-colors flex items-center gap-2 text-sm font-medium"
+              className="mt-6 text-cyan-400 hover:text-cyan-300 transition-colors flex items-center gap-2 text-sm font-medium"
             >
               View Details
               <motion.span
@@ -232,14 +232,14 @@ function Timeline() {
 
   return (
     <div className="relative min-h-screen py-20">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-purple-900/20 via-black to-black" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-slate-800/30 via-slate-900 to-black" />
       
       <div className="relative z-10 max-w-6xl mx-auto px-4">
         <div className="text-center mb-16">
           <motion.h2 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-600"
+            className="text-5xl md:text-6xl font-bold mb-6 text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-cyan-400"
           >
             Professional Journey
           </motion.h2>
@@ -255,7 +255,7 @@ function Timeline() {
 
         <div className="relative">
           {/* Timeline line */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-purple-400 to-pink-600 hidden md:block" />
+          <div className="absolute left-1/2 transform -translate-x-1/2 w-0.5 h-full bg-gradient-to-b from-blue-400 to-cyan-400 hidden md:block" />
           
           <div className="space-y-8">
             {experiences.map((experience, index) => (
